@@ -87,8 +87,8 @@ a:focus-visible{outline:3px solid var(--gray-dark);outline-offset:3px}
   display:flex;flex-direction:column;justify-content:center;
   gap:8px;
   padding:64px 24px 24px;
-  padding-left: 80px; 
-  padding-right: 80px;
+  padding-left: 50px; 
+  padding-right: 50px;
   font-size: 45;
   line-height:1.45;
   text-align:center;
