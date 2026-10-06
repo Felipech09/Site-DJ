@@ -89,7 +89,7 @@ a:focus-visible{outline:3px solid var(--gray-dark);outline-offset:3px}
   padding:64px 24px 24px;
   padding-left: 80px; 
   padding-right: 80px;
-  font-size: 65;
+  font-size: 45;
   line-height:1.45;
   text-align:center;
   overflow-y:auto;
