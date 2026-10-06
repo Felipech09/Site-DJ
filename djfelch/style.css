@@ -1,8 +1,8 @@
 :root{
   --yellow:#FFD21F; --yellow-deep:#F2BE00;
   --gray-light:#ECEDEF; --white:#fff; --gray-dark:#2A2B2E;
-  --display:"Archivo Black","Arial Black",Impact,sans-serif;
-  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --display:"Unbounded","Arial Black",Impact,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -11,7 +11,7 @@ body{font-family:var(--body);color:var(--gray-dark);background:var(--white);line
 
 /* Hero */
 .hero{background:var(--yellow);padding:calc(24px + env(safe-area-inset-top,0px)) 0 36px}
-.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:200px 200px 20px 20px;background:var(--gray-light)}
+.photo{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:200px 200px 20px 20px;background:var(--gray-light)}
 .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,18vw,5.6rem);line-height:.95;margin-top:22px;letter-spacing:-.01em}
 .tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
 .tags span{background:var(--white);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.95rem}
@@ -70,3 +70,29 @@ footer.site{padding:22px 0;text-align:center;font-size:.85rem;opacity:.7}
 
 a:focus-visible{outline:3px solid var(--gray-dark);outline-offset:3px}
 @media (min-width:700px){.wrap{max-width:620px}}
+
+/*foto rodando*/
+.flip{perspective:1200px;cursor:pointer}
+.flip-inner{position:relative;transition:transform .7s;transform-style:preserve-3d}
+.flip.virada .flip-inner{transform:rotateY(180deg)}
+
+.flip-front,
+.flip-back{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+
+.flip-back{
+  position:absolute;inset:0;
+  transform:rotateY(180deg);
+  background:var(--white);
+  border-radius:200px 200px 20px 20px;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:8px;
+  padding:64px 24px 24px;
+  padding-left: 80px; 
+  padding-right: 80px;
+  font-size: 65;
+  line-height:1.45;
+  text-align:center;
+  overflow-y:auto;
+}
+
+@media (prefers-reduced-motion:reduce){.flip-inner{transition:none}}
