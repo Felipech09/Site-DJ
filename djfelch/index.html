@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DJ Felch | Open format em Brasília</title>
+<meta name="description" content="DJ Felch, open format em Brasília e entorno. Aniversários, 15 anos, casamentos e bares. Peça seu orçamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#FFD21F; --yellow-deep:#F2BE00;
+  --gray-light:#ECEDEF; --white:#fff; --gray-dark:#2A2B2E;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--gray-dark);background:var(--white);line-height:1.6;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px));-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{background:var(--yellow);padding:calc(24px + env(safe-area-inset-top,0px)) 0 36px}
+.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:200px 200px 20px 20px;background:var(--gray-light)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,18vw,5.6rem);line-height:.95;margin-top:22px;letter-spacing:-.01em}
+.tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.tags span{background:var(--white);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.95rem}
+
+.grey{background:var(--gray-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cg fill='%23ECEDEF' stroke='%23ffffff' stroke-width='1.6'%3E%3Ccircle cx='24' cy='12' r='24'/%3E%3Ccircle cx='24' cy='12' r='17'/%3E%3Ccircle cx='24' cy='12' r='10'/%3E%3Ccircle cx='0' cy='24' r='24'/%3E%3Ccircle cx='0' cy='24' r='17'/%3E%3Ccircle cx='0' cy='24' r='10'/%3E%3Ccircle cx='48' cy='24' r='24'/%3E%3Ccircle cx='48' cy='24' r='17'/%3E%3Ccircle cx='48' cy='24' r='10'/%3E%3C/g%3E%3C/svg%3E") !important}
+section,.hero,.contact{position:relative;overflow:hidden}
+section .wrap,.hero .wrap{position:relative;z-index:1}
+.tri{position:absolute;aspect-ratio:1;pointer-events:none;z-index:0}
+.t-a{top:0;right:0;width:62%;background:var(--gray-light);clip-path:polygon(100% 0,100% 100%,0 0)}
+.t-b{top:0;left:0;width:18%;background:var(--gray-dark);clip-path:polygon(0 0,100% 0,0 100%)}
+.t-c{bottom:0;left:0;width:34%;background:var(--yellow-deep);clip-path:polygon(0 100%,100% 100%,0 0)}
+.t-d{bottom:0;right:0;width:38%;background:var(--white);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.t-e{top:0;left:0;width:26%;background:var(--gray-light);clip-path:polygon(0 0,100% 0,0 100%)}
+.t-f{top:0;right:0;width:20%;background:var(--yellow);clip-path:polygon(0 0,100% 0,100% 100%)}
+.t-g{bottom:0;right:0;width:24%;background:var(--yellow);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.band{height:28px;background:var(--gray-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='28'%3E%3Cpolygon points='0,28 20,0 40,28' fill='%23FFD21F'/%3E%3Cpolygon points='40,28 60,0 80,28' fill='%23B9BABE'/%3E%3Cpolygon points='20,0 60,0 40,28' fill='%23ffffff'/%3E%3Cpolygon points='-20,0 20,0 0,28' fill='%23ffffff'/%3E%3Cpolygon points='60,0 100,0 80,28' fill='%23ffffff'/%3E%3C/svg%3E") repeat-x center/80px 28px}
+.branch{position:absolute;right:-26px;top:6px;width:230px;height:auto;z-index:0;pointer-events:none}
+.contact .wrap{z-index:1}
+/* Sections */
+section{padding:44px 0}
+h2{font-family:var(--display);font-weight:400;font-size:1.7rem;line-height:1.1;margin-bottom:14px}
+.about p{font-size:1.08rem;max-width:46ch}
+.about p+p{margin-top:12px}
+.grey{background:var(--gray-light)}
+
+/* Boxes */
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.box{background:var(--white);border-radius:16px;padding:18px 16px;font-weight:600;border-bottom:4px solid var(--yellow)}
+.box small{display:block;font-weight:400;font-size:.88rem;opacity:.75;margin-top:4px}
+.box.wide{grid-column:1/-1}
+
+/* Estrutura */
+.gear{list-style:none;padding:0;display:grid;gap:10px;margin-top:6px}
+.gear li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem}
+.gear li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--yellow);flex:none}
+
+/* Avaliações */
+.review{background:var(--white);border-radius:16px;padding:20px;margin-top:12px}
+.review p{font-size:1.02rem}
+.review footer{margin-top:14px;font-weight:600;font-size:.92rem}
+.review footer ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.review footer li{background:var(--gray-light);border-radius:10px;padding:9px 12px;text-align:center;overflow-wrap:anywhere}
+.review footer li:first-child{grid-column:1/-1}
+
+/* Contato */
+.contact{background:var(--yellow);text-align:center;padding-top:56px}
+.contact p{margin-bottom:20px;font-size:1.05rem}
+.btn{display:flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;background:var(--gray-dark);color:var(--white);font-weight:600;font-size:1.05rem;text-decoration:none}
+.links{display:flex;gap:10px;margin-top:12px}
+.links a{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;background:var(--white);color:var(--gray-dark);font-weight:600;text-decoration:none;font-size:.98rem;border:2px solid #000}
+footer.site{padding:22px 0;text-align:center;font-size:.85rem;opacity:.7}
+
+/* Botão fixo */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,rgba(255,255,255,.96) 70%,rgba(255,255,255,0))}
+.sticky .btn{max-width:520px;margin:0 auto;background:var(--yellow);color:var(--gray-dark);box-shadow:0 2px 0 var(--yellow-deep)}
+
+a:focus-visible{outline:3px solid var(--gray-dark);outline-offset:3px}
+@media (min-width:700px){.wrap{max-width:620px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <i class="tri t-a"></i><i class="tri t-b"></i><i class="tri t-c"></i>
+  <div class="wrap">
+    <img class="photo" src="foto.jpg" alt="DJ Felch tocando na controladora" width="800" height="1000" fetchpriority="high">
+    <h1>DJ Felch</h1>
+    <div class="tags"><span>Brasília</span><span>Open format</span></div>
+  </div>
+</header>
+<div class="band" aria-hidden="true"></div>
+
+<main>
+  <section class="about">
+    <div class="wrap">
+      <h2>O que é open format?</h2>
+      <p>É um set sem limite de gênero: do funk ao pop, do sertanejo ao eletrônico. O repertório se adapta ao público e à escolha do cliente, para a festa nunca perder o clima.</p>
+    </div>
+  </section>
+
+  <section class="grey">
+    <i class="tri t-f"></i>
+    <div class="wrap">
+      <h2>Eventos que eu toco</h2>
+      <div class="boxes">
+        <div class="box">Aniversários</div>
+        <div class="box">15 anos</div>
+        <div class="box">Casamentos</div>
+        <div class="box">Bares<small>Shows curtos</small></div>
+        <div class="box wide">Intervalos entre atrações<small>Mantém a pista animada entre uma apresentação e outra</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <svg class="branch" viewBox="0 0 230 150" aria-hidden="true"><defs><symbol id="flor" viewBox="0 0 40 40"><g fill="#FFD21F"><ellipse cx="20" cy="9" rx="8" ry="10" transform="rotate(0 20 20)"/><ellipse cx="20" cy="9" rx="8" ry="10" transform="rotate(72 20 20)"/><ellipse cx="20" cy="9" rx="8" ry="10" transform="rotate(144 20 20)"/><ellipse cx="20" cy="9" rx="8" ry="10" transform="rotate(216 20 20)"/><ellipse cx="20" cy="9" rx="8" ry="10" transform="rotate(288 20 20)"/></g><circle cx="20" cy="20" r="5" fill="#fff"/><circle cx="18" cy="20" r="1" fill="#2A2B2E"/><circle cx="22" cy="19" r="1" fill="#2A2B2E"/><circle cx="20" cy="22" r="1" fill="#2A2B2E"/></symbol></defs><path d="M-10 140 C 40 125, 85 108, 125 76 S 195 38, 240 30" fill="none" stroke="#2A2B2E" stroke-width="6" stroke-linecap="round"/><path d="M92 104 C 100 82, 112 68, 134 62" fill="none" stroke="#2A2B2E" stroke-width="4" stroke-linecap="round"/><use href="#flor" x="10" y="92" width="38" height="38"/><use href="#flor" x="58" y="86" width="30" height="30"/><use href="#flor" x="98" y="50" width="40" height="40"/><use href="#flor" x="140" y="36" width="36" height="36"/><use href="#flor" x="176" y="6" width="42" height="42"/><use href="#flor" x="120" y="84" width="28" height="28"/><use href="#flor" x="188" y="52" width="30" height="30"/><use href="#flor" x="54" y="114" width="26" height="26"/></svg>
+    <div class="wrap">
+      <h2>Estrutura completa</h2>
+      <ul class="gear">
+        <li>Som</li>
+        <li>Iluminação</li>
+        <li>Controladora</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <i class="tri t-e"></i><i class="tri t-d"></i>
+    <div class="wrap">
+      <h2>Peça seu orçamento</h2>
+      <p>Atendo Brasília e entorno. O valor depende do evento, do local e do horário.</p>
+      <a class="btn" id="wpp" href="#">Chamar no WhatsApp</a>
+      <div class="links">
+        <a href="https://instagram.com/dj.felch" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:djfelchmusic@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grey">
+    <i class="tri t-g"></i>
+    <div class="wrap">
+      <h2>Avaliações</h2>
+
+      <div class="review">
+        <p>“Escreva aqui o depoimento de quem já contratou.”</p>
+        <footer>
+          <ul>
+            <li>@akemi_kumeda</li>
+            <li>aniversário</li>
+            <li>11/09/26</li>
+          </ul>
+        </footer>
+      </div>
+
+      <div class="review">
+        <p>“Escreva aqui o depoimento de quem já contratou.”</p>
+        <footer>
+          <ul>
+            <li>@martinsgbr_</li>
+            <li>Evento</li>
+            <li>Data</li>
+          </ul>
+        </footer>
+      </div>
+
+      <div class="review">
+        <p>“Escreva aqui o depoimento de quem já contratou.”</p>
+        <footer>
+          <ul>
+            <li>@_luizWerneck</li>
+            <li>Evento</li>
+            <li>DATA</li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">DJ Felch, Brasília e entorno</footer>
+
+<script>
+// Troque o número aqui (formato: 55 + DDD + número, só dígitos). Ex.: 5561999999999
+var NUMERO = "5561982796730";
+var MENSAGEM = "Olá, DJ Felch! Gostaria de saber mais sobre seus serviços.";
+var url = "https://wa.me/" + NUMERO + "?text=" + encodeURIComponent(MENSAGEM);
+["wpp","wpp2"].forEach(function(id){
+  var a = document.getElementById(id);
+  a.href = url; a.target = "_blank"; a.rel = "noopener";
+});
+</script>
+</body>
+</html>
